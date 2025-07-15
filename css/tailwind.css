@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Custom Components & Utilities */
+@layer components {
+  .btn-galaxy {
+    @apply px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-galaxy-purple to-galaxy-blue text-white hover:shadow-galaxy-purple/50;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-galaxy-purple text-galaxy-purple hover:bg-galaxy-purple hover:text-white;
+  }
+  
+  .card-galaxy {
+    @apply bg-galaxy-gray/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-galaxy-purple to-galaxy-blue bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* No specific utilities needed here that are not better in custom.css or already in tailwind.config.js */
+}
+
+@layer components {
+  /* ... existing component classes like .btn-galaxy, .card-galaxy, .card-dark, .text-gradient ... */
+  
+  .card-contact { /* New: For the boxes in the contact section */
+    @apply bg-galaxy-gray/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/5;
+  }
+
+  .form-input {
+    @apply w-full p-3 rounded-lg bg-galaxy-dark border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-galaxy-blue focus:border-transparent transition-all duration-200;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+}

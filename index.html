@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galaxy Portfolio - Mya Thwe Nyein</title>
+  <link rel="stylesheet" href="css/main.css"> <!-- Tailwind's generated CSS -->
+  <link rel="stylesheet" href="css/custom.css"> <!-- Your custom raw CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body class="font-poppins text-white bg-galaxy-dark">
+
+  <!-- Loading Screen -->
+  <div id="loading" class="loading-screen">
+    <div class="loading-spinner animate-spin-slow"></div>
+    <p class="mt-4 text-galaxy-purple font-semibold">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </p>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <!-- Background Effects -->
+  <div class="starry-bg"></div>
+  <div class="nebula-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-20 bg-galaxy-dark/80 border-b border-white/10 backdrop-blur px-6 py-5  ">
+    <div class="flex justify-between items-center container mx-auto"> <span
+        class="text-xl font-bold text-gradient">Galaxy</span>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-galaxy-purple relative group">Home<span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-galaxy-purple to-galaxy-blue group-hover:w-full transition-all duration-300"></span></a>
+        </li>
+        <li><a href="#about" class="hover:text-galaxy-purple relative group">about<span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-galaxy-purple to-galaxy-blue group-hover:w-full transition-all duration-300"></span></a>
+        </li>
+        <li><a href="#projects" class="hover:text-galaxy-purple relative group">Projects<span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-galaxy-purple to-galaxy-blue group-hover:w-full transition-all duration-300"></span></a>
+        </li>
+        <li><a href="#contact" class="hover:text-galaxy-purple relative group">Contact<span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-galaxy-purple to-galaxy-blue group-hover:w-full transition-all duration-300"></span></a>
+        </li>
+      </ul>
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-16 left-0 w-full bg-galaxy-dark/95 backdrop-blur border-t border-white/10 py-4">
+      <ul class="flex flex-col items-center space-y-3">
+        <li><a href="#home" class="block py-2 hover:text-galaxy-purple">Home</a></li>
+        <li><a href="#work" class="block py-2 hover:text-galaxy-purple">Work</a></li>
+        <li><a href="#projects" class="block py-2 hover:text-galaxy-purple">Projects</a></li>
+        <li><a href="#testimonials" class="block py-2 hover:text-galaxy-purple">Testimonials</a></li>
+        <li><a href="#contact" class="block py-2 hover:text-galaxy-purple">Contact</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="flex flex-col relative justify-center items-center min-h-screen pt-24 px-4 sm:px-6 lg:px-8 ">
+    <img src="./images/pp.jpg" alt="profile"
+      class="size-48 rounded-full border-4 border-galaxy-purple shadow-xl mb-6 wow animate-zoom-grow"
+      data-wow-delay="0.5s" />
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-2 wow animate-zoom-grow" data-wow-delay="0.7s">
+      <span id="typewriter-name" class="typing-cursor text-gradient"></span>
+    </h1>
+    <div class="text-xl md:text-2xl text-galaxy-purple font-semibold mb-4 wow animate-zoom-grow" data-wow-delay="1s">
+      <span id="typewriter-role"></span>
+    </div>
+    <p class="w-full max-w-xl text-gray-300 text-center leading-relaxed wow animate-zoom-grow" data-wow-delay="1.2s">
+      I'm passionate about designing out-of-this-world UI/UX experiences for real people!
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center wow animate-zoom-grow"
+      data-wow-delay="1.4s">
+      <a href="#projects" class="btn-galaxy btn-primary inline-flex items-center space-x-2 animate-pulse-slow">
+        <span>💼</span><span>View My Work</span>
+      </a>
+      <a href="#contact" class="btn-galaxy btn-secondary inline-flex items-center space-x-2">
+        <span>✉️</span><span>Get In Touch</span>
+      </a>
+    </div>
+
+    <!-- Animated Scroll Down Button -->
+    <a href="#about" class=" w-full items-center absolute bottom-10">
+      <div
+        class="  flex flex-col items-center text-gray-400 hover:text-galaxy-blue transition-colors duration-300 wow animate-zoom-grow"
+        data-wow-delay="2s">
+        <span class="text-sm">Scroll Down</span>
+        <svg class="w-8 h-8 animate-scroll-arrow mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </a>
+
+
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-4 h-4 bg-galaxy-blue rounded-full animate-float opacity-60 z-0"></div>
+    <div class="absolute top-32 right-16 w-2 h-2 bg-galaxy-purple rounded-full animate-bounce-slow opacity-40 z-0">
+    </div>
+    <div class="absolute bottom-20 left-20 w-3 h-3 bg-galaxy-pink rounded-full animate-float opacity-50 z-0"
+      style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-40 right-10 w-2 h-2 bg-galaxy-blue rounded-full animate-bounce-slow opacity-30 z-0"
+      style="animation-delay: 2s;"></div>
+  </section>
+
+
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 text-white relative z-10">
+    <div
+      class="max-w-7xl mx-auto flex wow animate-zoom-grow flex-col md:flex-row items-center md:items-start md:space-x-12"
+      data-wow-delay="0.2s">
+
+      <!-- Left Column: Profile Image with Animated Border & Download Button -->
+      <div class="w-full md:w-1/3 flex flex-col items-end! mb-12 md:mb-0 space-y-8">
+        <div>
+          <div class="profile-image-inner">
+            <img src="./images/ppVid.mp4.gif" alt="Mya Thwe Nyein Profile" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Download CV Button -->
+        <a href="/path/to/your/resume.pdf" download
+          class="card-galaxy flex justify-center space-x-3 hover:shadow-galaxy-blue/20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span>Download My CV</span>
+        </a>
+      </div>
+
+      <!-- Right Column: Info Sections -->
+      <div class="w-full md:w-2/3 space-y-8">
+
+        <!-- Who Am I & My Approach -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Who Am I Card -->
+          <div class="card-dark wow animate-zoom-grow card-galaxy hover:shadow-galaxy-blue/20" data-wow-delay="0.4s">
+            <div class="flex items-center mb-4">
+              <div class="info-icon-circle mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.228 9.228a2.99 2.99 0 114.243 0M10.5 11.5l-2.5 2.5m5.5-5.5l2.5 2.5m-3.793 4.793l-4.243 4.243m7.071-7.071l-4.243 4.243a1 1 0 01-.707.293H7.5a1 1 0 01-1-1v-1.586a1 1 0 01.293-.707l4.243-4.243a1 1 0 011.414 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white">Who Am I</h3>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Passionate Junior UI/UX Designer skilled in Figma, wireframing, and prototyping. I create intuitive,
+              user-centered designs through research, iteration, and collaboration to craft meaningful digital
+              experiences
+            </p>
+          </div>
+
+          <!-- My Approach Card -->
+          <div class="card-dark wow animate-zoom-grow card-galaxy hover:shadow-galaxy-blue/20" data-wow-delay="0.6s">
+            <div class="flex items-center mb-4">
+              <div class="info-icon-circle mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9.663 17.423l-3.17-2.113A.846.846 0 015 14.542V9.458a.846.846 0 011.493-.668l3.17 2.113a.846.846 0 010 1.336l-3.17 2.113a.846.846 0 01-1.493-.668V10m3.84-2.828L18.828 12 12 18.828 5.172 12m7.071-7.071L18.828 12" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white">My Approach</h3>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              I approach design with empathy and curiosity, focusing on user needs, testing ideas through iteration, and
+              collaborating closely to create simple, functional, and engaging digital experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Personal Info Section -->
+        <div class="card-dark wow animate-zoom-grow card-galaxy hover:shadow-galaxy-blue/20" data-wow-delay="0.8s">
+          <div class="flex items-center mb-6">
+            <div class="info-icon-circle mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Personal Info</h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-gray-300">
+            <!-- Info Item: Name -->
+            <div class="flex items-center">
+              <div class="info-icon-circle w-10 h-10 text-lg mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-white">Name:</span> Mya Thwe Nyein
+              </div>
+            </div>
+            <!-- Info Item: Date of Birth -->
+            <div class="flex items-center">
+              <div class="info-icon-circle w-10 h-10 text-lg mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-white">Date of Birth:</span> july 6, 2003
+              </div>
+            </div>
+            <!-- Info Item: Place of Birth -->
+            <div class="flex items-center">
+              <div class="info-icon-circle w-10 h-10 text-lg mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-white">Place of Birth:</span> Hmawbi , Yangon
+              </div>
+            </div>
+            <!-- Info Item: Email -->
+            <div class="flex items-center">
+              <div class="info-icon-circle w-10 h-10 text-lg mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.893 5.262A2 2 0 0012 14c.732 0 1.408-.344 1.893-.829L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-white">Email:</span> mtndev@gmail.com
+              </div>
+            </div>
+            <!-- Info Item: Phone -->
+            <div class="flex items-center">
+              <div class="info-icon-circle w-10 h-10 text-lg mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 00.957.923l.666 2.001A1 1 0 009.688 7.5c-1.348.513-2.607 1.29-3.664 2.347a15.42 15.42 0 00-2.347 3.664c-.056.297-.04.608.046.903l2.001.666a1 1 0 00.923.957H19a2 2 0 002-2V5a2 2 0 00-2-2h-2m-7 14h6m-3-3l3 3m-3-3v6" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-white">Phone:</span> +95 661 630 290
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Work Experience Section -->
+  <!-- <section id="work" class="section-padding bg-galaxy-gray/30">
+    <div class="max-w-7xl mx-auto"> 
+      <h2 class="text-center text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-16 wow animate-zoom-grow">Team Work
+        Experience</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div class="card-galaxy hover:shadow-galaxy-purple/20 wow animate-zoom-grow" data-wow-delay="0.2s">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-galaxy-purple to-galaxy-blue rounded-full flex items-center justify-center text-2xl mr-4 animate-glow">
+              🎨</div>
+            <div>
+              <h3 class="text-xl font-bold text-white">UI/UX Designer</h3>
+              <p class="text-galaxy-purple font-semibold">Creative Agency</p>
+              <p class="text-sm text-gray-400">2022 - Present</p>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">Designing user interfaces and experiences for web and mobile
+            applications with focus on usability and aesthetics.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-galaxy-purple/20 text-galaxy-purple rounded-full text-sm">Figma</span>
+            <span class="px-3 py-1 bg-galaxy-blue/20 text-galaxy-blue rounded-full text-sm">Adobe XD</span>
+            <span class="px-3 py-1 bg-galaxy-pink/20 text-galaxy-pink rounded-full text-sm">Prototyping</span>
+          </div>
+        </div>
+
+        
+        <div class="card-galaxy hover:shadow-galaxy-blue/20 wow animate-zoom-grow" data-wow-delay="0.4s">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-r from-galaxy-blue to-galaxy-purple rounded-full flex items-center justify-center text-2xl mr-4 animate-glow"
+              style="animation-delay: 0.5s;">💻</div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Frontend Developer</h3>
+              <p class="text-galaxy-blue font-semibold">Tech Startup</p>
+              <p class="text-sm text-gray-400">2021 - 2022</p>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">Developed responsive websites and web applications using modern
+            frontend technologies and frameworks.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-galaxy-purple/20 text-galaxy-purple rounded-full text-sm">React</span>
+            <span class="px-3 py-1 bg-galaxy-blue/20 text-galaxy-blue rounded-full text-sm">CSS3</span>
+            <span class="px-3 py-1 bg-galaxy-pink/20 text-galaxy-pink rounded-full text-sm">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Project Showcase Example -->
+  <section id="projects" class="section-padding relative">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-center text-3xl md:text-4xl font-bold text-gradient mb-8 wow animate-zoom-grow">My Projects
+      </h3>
+      <!-- <div
+        class="rounded-2xl overflow-hidden bg-galaxy-gray border-4 border-galaxy-purple shadow-xl p-4 relative wow animate-zoom-grow"
+        data-wow-delay="0.4s">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="Project Example" class="mx-auto rounded-xl shadow-lg max-h-96 w-auto object-cover mb-4" />
+        <div class="text-center text-gray-300 text-lg">Modern dashboard design - analytics in a glance!</div>
+        <div class="mt-4 flex justify-center space-x-6">
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-galaxy-blue" data-target="895" id="stat1">0</span>
+            <span class="text-sm text-gray-400">Users</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-galaxy-purple" data-target="754" id="stat2">0</span>
+            <span class="text-sm text-gray-400">Downloads</span>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Additional Project Cards with 3D Effect -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Added lg:grid-cols-3 for more space -->
+        <a href="https://www.figma.com/design/NoeJrF2y5u5T3UjoMe3JBM/desgin?node-id=274-407&p=f&t=BGE6LTc5veJbUldj-0"
+          target="_blank" class="project-card-3d-wrapper wow animate-zoom-grow" data-wow-delay="0.6s"
+          data-project-image="images/project2.jpg">
+          <div class="project-card-3d card-galaxy cursor-pointer">
+            <img src="./images/foodgpApp.png" alt="Mobile App" class="rounded-xl object-cover w-full h-48 mb-4" />
+            <h4 class="text-xl font-bold text-white mb-2">Foodgo ( Burger Shop )</h4>
+            <p class="text-gray-300 text-sm mb-3">Designed a burger app with full menu, search, smooth ordering, live
+              chat, secure payment, and clean, user-friendly, accessible UI.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-galaxy-blue/20 text-galaxy-blue rounded-full text-sm">Mobile</span>
+              <span class="px-3 py-1 bg-galaxy-purple/20 text-galaxy-purple rounded-full text-sm">UI/UX Design</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.figma.com/design/NoeJrF2y5u5T3UjoMe3JBM/desgin?node-id=48-2&p=f&t=xVkcWRcvvaSfkBdG-0"
+          target="_blank" class="project-card-3d-wrapper wow animate-zoom-grow" data-wow-delay="0.8s"
+          data-project-image="images/project1.jpg">
+          <div class="project-card-3d card-galaxy cursor-pointer">
+            <img src="./images/digitalStore.png" alt="Dashboard" class="rounded-xl object-cover w-full h-48 mb-4" />
+            <h4 class="text-xl font-bold text-white mb-2">Phlox ( Electronics Store )</h4>
+            <p class="text-gray-300 text-sm mb-3">Designed an e-commerce site for phones, laptops, and gadgets with
+              clear categories, smooth navigation, and a seamless, user-friendly shopping experience.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-galaxy-pink/20 text-galaxy-pink rounded-full text-sm">Web App</span>
+              <span class="px-3 py-1 bg-galaxy-blue/20 text-galaxy-blue rounded-full text-sm">UI/UX Design</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.figma.com/design/fZzlw06HYiQ51rdcdEX0p1/music-app?node-id=87-2&p=f&t=bZ90YmArHMK6FKAO-0"
+          class="project-card-3d-wrapper wow animate-zoom-grow" target="_blank" data-wow-delay="1s"
+          data-project-image="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+          <!-- Added third card -->
+          <div class="project-card-3d card-galaxy cursor-pointer">
+            <img src="./images/music.png" alt="Coding Project" class="rounded-xl object-cover w-full h-48 mb-4" />
+            <h4 class="text-xl font-bold text-white mb-2">Music App</h4>
+            <p class="text-gray-300 text-sm mb-3">Designed a music app with user login, genre browsing, artist sections,
+              and seamless streaming focused on a simple, intuitive, engaging experience.
+
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-galaxy-purple/20 text-galaxy-purple rounded-full text-sm">Mobile</span>
+              <span class="px-3 py-1 bg-galaxy-pink/20 text-galaxy-pink rounded-full text-sm">UI/UX Design</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.figma.com/design/NoeJrF2y5u5T3UjoMe3JBM/desgin?node-id=161-580&p=f&t=HY9vdSXuxRJP1O75-0"
+          target="_blank" class="project-card-3d-wrapper wow animate-zoom-grow" data-wow-delay="1s"
+          data-project-image="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+          <!-- Added third card -->
+          <div class="project-card-3d card-galaxy cursor-pointer">
+            <img src="./images/pizza.png" alt="Coding Project" class="rounded-xl object-cover top-0 w-full h-48 mb-4" />
+            <h4 class="text-xl font-bold text-white mb-2">ABCD ( Food App )</h4>
+            <p class="text-gray-300 text-sm mb-3">Designed a coffee ordering web app for hot drinks, cold coffee, and
+              ice cream with clear menus, item details, and smooth, user-friendly ordering experience.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-galaxy-purple/20 text-galaxy-purple rounded-full text-sm">Mobile</span>
+              <span class="px-3 py-1 bg-galaxy-pink/20 text-galaxy-pink rounded-full text-sm">UI/UX Design</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding  text-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-center text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-16 wow animate-zoom-grow">Let's
+        Connect</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+        <div class="card-contact wow animate-zoom-grow" data-wow-delay="0.2s">
+          <h3 class="text-2xl font-bold text-white mb-6">Find Me Online</h3>
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            Feel free to reach out through my social channels. I'm always open to new connections and collaborations!
+          </p>
+
+          <div class="space-y-6">
+            <!-- Social Link: GitHub -->
+            <a href="https://github.com/MTNyeinDev" target="_blank" class="flex items-center space-x-4 group">
+              <div class="social-icon-circle social-icon-github wow animate-zoom-grow" data-wow-delay="0.3s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.294-1.552 3.301-1.23 3.301-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.765-1.589 8.197-6.095 8.197-11.389 0-6.627-5.372-12-12-12z" />
+                </svg>
+              </div>
+              <span
+                class="text-xl font-semibold text-white group-hover:text-galaxy-blue transition-colors">GitHub</span>
+            </a>
+
+            <!-- Social Link: LinkedIn -->
+            <!-- <a href="https://linkedin.com/in/yourusername" target="_blank" class="flex items-center space-x-4 group">
+              <div class="social-icon-circle social-icon-linkedin wow animate-zoom-grow" data-wow-delay="0.4s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </div>
+              <span
+                class="text-xl font-semibold text-white group-hover:text-galaxy-blue transition-colors">LinkedIn</span>
+            </a> -->
+
+            <!-- Social Link: Instagram -->
+            <a href="https://www.instagram.com/myanyine/profilecard/?igsh=MWZlbzd0bWtyODVsYg==" target="_blank"
+              class="flex items-center space-x-4 group">
+              <div class="social-icon-circle social-icon-instagram wow animate-zoom-grow" data-wow-delay="0.5s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.805.249 2.227.423.42.173.722.416 1.002.696.279.28.523.582.696 1.002.174.422.368 1.057.423 2.227.06 1.266.072 1.646.072 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.805-.423 2.227-.173.42-.416.722-.696 1.002-.28.279-.582.523-1.002.696-.422.174-1.057.368-2.227.423-1.266.06-1.646.072-4.85.072s-3.584-.012-4.85-.071c-1.17-.055-1.805-.249-2.227-.423-.42-.173-.722-.416-1.002-.696-.279-.28-.523-.582-.696-1.002-.174-.422-.368-1.057-.423-2.227-.06-1.266-.072-1.646-.072-4.85s.012-3.584.071-4.85c.055-1.17.249-1.805.423-2.227.173-.42.416-.722.696-1.002.279-.28.582-.523.696-1.002.174-.422.368-1.057.423-2.227.06-1.266.072-1.646.072-4.85zM12 5.374c-3.691 0-6.686 2.995-6.686 6.686s2.995 6.686 6.686 6.686 6.686-2.995 6.686-6.686c0-3.691-2.995-6.686-6.686-6.686zm0 10.825c-2.28 0-4.139-1.86-4.139-4.139s1.86-4.139 4.139-4.139 4.139 1.86 4.139 4.139c0 2.28-1.859 4.139-4.139 4.139zm7.145-9.356c-.551 0-1 .449-1 1s.449 1 1 1 1-.449 1-1-.448-1-1-1z" />
+                </svg>
+              </div>
+              <span
+                class="text-xl font-semibold text-white group-hover:text-galaxy-blue transition-colors">Instagram</span>
+            </a>
+
+            <!-- Social Link: Facebook  -->
+            <a href="https://www.facebook.com/share/1F32CYptpr/" target="_blank" class="flex items-center space-x-4 group">
+              <div class="social-icon-circle social-icon-twitter wow animate-zoom-grow" data-wow-delay="0.6s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path
+                    d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
+                </svg>
+
+              </div>
+              <span class="text-xl font-semibold text-white group-hover:text-galaxy-blue transition-colors">Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div class="card-contact wow animate-zoom-grow" data-wow-delay="0.4s">
+          <h3 class="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" class="form-input resize-y"
+                placeholder="Type your message here..."></textarea>
+            </div>
+            <div>
+              <button onclick="sentMessage()" id="messageBtn" type="button" class="w-full btn-galaxy  btn-primary py-3 px-6 animate-pulse-slow">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center text-gray-500 text-sm">© 2025 Mya Thwe Nyein. Made with ❤️ and lots of ☕</footer>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 bg-black/80 hidden z-[1001] flex justify-center items-center p-4">
+    <div class="project-modal-content">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <img id="modal-image" src="" alt="Project Image" class="rounded-xl" />
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/wow.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "galaxy-portfolio",
+  "version": "1.0.0",
+  "description": "Galaxy themed portfolio website with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch",
+    "build": "tailwindcss -i ./css/tailwind.css -o ./css/main.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  },
+  "dependencies": {
+    "vercel": "^44.2.6"
+  }
+}
