@@ -365,7 +365,7 @@ function sentMessage() {
     // Button text ကို changing
     const button = document.querySelector('#messageBtn');
     const originalText = button.innerHTML;
-    button.innerHTML = 'ပို့နေပါသည်...';
+    button.innerHTML = 'Sending...';
     button.disabled = true;
     
     // Template parameters
